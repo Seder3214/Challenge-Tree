@@ -49,7 +49,7 @@ unlocked() { return hasUpgrade("D", 11) }, // The upgrade is only visible when t
 				cost: new Decimal(20),
 				unlocked() { return hasUpgrade("D", 12) },
 				effect() {
-					return player.points.add( player.points / 100 + 0.2).pow(0.25)
+					return player.points.add( player.points.div(100).add(0.2)).pow(0.25)
 				},
 				effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x"},
 			},
@@ -65,7 +65,7 @@ unlocked() { return hasUpgrade("D", 13) },
 				cost: new Decimal(80),	
 				unlocked() { return hasUpgrade("D", 14) },
 				effect() {
-	return player.SD.points.add(player.SD.points / 10 + 0.2).pow(0.4)	
+	return player.SD.points.add(player.SD.points.div(10).add(0.2)).pow(0.4)	
 			},
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x"},
 			}			
