@@ -1,7 +1,7 @@
 let modInfo = {
 	name: "The Dataminer Tree",
-	id: "mymod",
-	author: "nobody",
+	id: "dmtree",
+	author: "seder3214",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
@@ -43,7 +43,7 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
-		if (hasUpgrade("D", 11)) gain = gain.times(1000);
+		if (hasUpgrade("D", 11)) gain = gain.times(2);
 		if (hasUpgrade("D", 12)) gain = gain.times(upgradeEffect("D", 12));
 		if (hasUpgrade("D", 13)) gain = gain.times(upgradeEffect("D", 13));
 		if (hasUpgrade("D", 14)) gain = gain.times(3);
@@ -54,12 +54,12 @@ function getPointGen() {
 				if (hasUpgrade("t1", 11)) gain = gain.plus(0.1);
 				if (hasUpgrade("t1", 12)) gain = gain.times(upgradeEffect("t1", 12));
 				if (hasUpgrade("t1", 13)) gain = gain.times(10);
-				if (hasUpgrade("t1+", 13)) gain = gain.times(upgradeEffect("t1+", 13));
-				if (hasUpgrade("t1+", 11)) gain = gain.times(2);
+				if (hasUpgrade("t11", 13)) gain = gain.times(upgradeEffect("t1+", 13));
+				if (hasUpgrade("t11", 11)) gain = gain.times(2);
 				if (hasUpgrade("t2", 13)) gain = gain.times(upgradeEffect("t2", 13));
 				if (hasUpgrade("t2", 11)) gain = gain.times(2);
-				if (hasUpgrade("t2+", 11)) gain = gain.times(10);
-				if (hasUpgrade("t2+", 12)) gain = gain.times(10);
+				if (hasUpgrade("t22", 11)) gain = gain.times(10);
+				if (hasUpgrade("t22", 12)) gain = gain.times(10);
 				if (hasUpgrade("DD", 11)) gain = gain.times(10);
 				if (hasUpgrade("DD", 12)) gain = gain.times(15);
 				
