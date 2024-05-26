@@ -82,9 +82,9 @@ unlocked() { return hasUpgrade("D", 13) },
 			let keep = [];
 			if (hasMilestone("D", 0) && resettingLayer=="D") keep.push("upgrades")
 			if (hasMilestone("t1", 0) && resettingLayer=="t1") keep.push("upgrades")
-			if (hasMilestone("t1+", 0) && resettingLayer=="t1+") keep.push("upgrades")
+			if (hasMilestone("t11", 0) && resettingLayer=="t11") keep.push("upgrades")
 			if (hasMilestone("t2", 0) && resettingLayer=="t2") keep.push("upgrades")
-				if (hasMilestone("t2+", 0) && resettingLayer=="t2+") keep.push("upgrades")
+				if (hasMilestone("t22", 0) && resettingLayer=="t22") keep.push("upgrades")
 			if (layers[resettingLayer].row > this.row) layerDataReset("p", keep)
 		},
 })
@@ -98,7 +98,7 @@ addLayer("SD", {
 		points: new Decimal(0),
     }},
     color: "#6B8E23",
-    requires: new Decimal(50), // Can be a function that takes requirement increases into account
+    requires: new Decimal(500), // Can be a function that takes requirement increases into account
     resource: "Simulation Data", // Name of prestige currency
     baseResource: "points", // Name of resource prestige is based on
     baseAmount() { return player.points }, // Get the current amount of baseResource
@@ -140,9 +140,9 @@ unlocked() { return hasUpgrade("SD", 12) }, // The upgrade is only visible when 
 	layerShown(){return (hasUpgrade("D", 12) || player[this.layer].unlocked)},
 	milestones: {
     0: {
-        requirementDescription: "200 SD",
+        requirementDescription: "40 SD",
         effectDescription: "blah",
-        done() { return player.SD.points.gte(200) },
+        done() { return player.SD.points.gte(40) },
     },
 },
 })
