@@ -350,7 +350,7 @@ addLayer("t2", {
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" },
 			},
 	},
-	layerShown(){return (hasUpgrade("t1+", 13) || player[this.layer].unlocked)},
+	layerShown(){return (hasUpgrade("t11", 13) || player[this.layer].unlocked)},
 	milestones: {
     0: {
         requirementDescription: "200 Tier 2 Data",
@@ -439,5 +439,5 @@ addLayer("V", {
     hotkeys: [
         {key: "D", description: "D: Reset for Data", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	layerShown(){return (hasUpgrade("t2+", 13) || player[this.layer].unlocked)},
+	layerShown(){return (hasUpgrade("t22", 13) || player[this.layer].unlocked)},
 })
